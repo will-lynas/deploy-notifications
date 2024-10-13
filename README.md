@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  notify:
     runs-on: ubuntu-latest
     steps:
       - uses: will-lynas/deploy-notifications@main

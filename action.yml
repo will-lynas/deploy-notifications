@@ -8,6 +8,7 @@ runs:
   using: "composite"
   steps:
     - id: format_commits
+      shell: bash
       run: |
         commits=$(echo "${{ toJson(github.event.commits) }}" | jq -r '.[] | "🥷 \(.author.name)\n💬 \(.message)\n"')
         echo "$commits"

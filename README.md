@@ -1,4 +1,4 @@
-# deploy-notifications
+# ✨ deploy-notifications
 
 GitHub Action for sending a Telegram notification after a successful deploy
 

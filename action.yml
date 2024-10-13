@@ -22,7 +22,7 @@ runs:
         to: ${{ inputs.to }}
         token: ${{ inputs.token }}
         message: |
-          📂 ${{github.repository}}
+          ✨ ${{github.repository}}
           🎉 Deploy Successful
 
           ${{ steps.format_commits.outputs.commit_messages }}

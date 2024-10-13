@@ -7,6 +7,12 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - id: format_commits
+      run: |
+        commits=$(echo "${{ toJson(github.event.commits) }}" | jq -r '.[] | "🥷 \(.author.name)\n💬 \(.message)\n"')
+        echo "$commits"
+        echo "$commits" >> $GITHUB_OUTPUT
+
     - uses: appleboy/telegram-action@master
       with:
         to: ${{ inputs.to }}
@@ -14,5 +20,5 @@ runs:
         message: |
           🎉 ${{github.repository}} deploy successful
 
-          💬
-          ${{ github.event.commits }}
+
+          ${{ steps.format_commits.outputs.commit_messages }}

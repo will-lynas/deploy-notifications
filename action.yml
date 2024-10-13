@@ -12,7 +12,10 @@ runs:
       run: |
         commits=$(echo '${{ toJson(github.event.commits) }}' | jq -r '.[] | "🥷 \(.author.name)\n💬 \(.message)\n"')
         echo "$commits"
-        echo "::set-output name=commit_messages::$commits"
+
+        echo 'commit_messages<<EOF' >> $GITHUB_OUTPUT
+        echo "$commits" >> $GITHUB_OUTPUT
+        echo 'EOF' >> $GITHUB_OUTPUT
 
     - uses: appleboy/telegram-action@master
       with:

@@ -1,0 +1,18 @@
+inputs:
+  to:
+    required: true
+  token:
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - uses: appleboy/telegram-action@master
+      with:
+        to: ${{ inputs.to }}
+        token: ${{ inputs.token }}
+        message: |
+          🎉 ${{github.repository}} deploy successful
+
+          💬
+          ${{ github.event.commits }}

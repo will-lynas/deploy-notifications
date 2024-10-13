@@ -9,7 +9,6 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
   notify:
@@ -20,3 +19,6 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
 ```
+
+> [!IMPORTANT]
+> Only works with a push event

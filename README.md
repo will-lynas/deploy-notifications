@@ -22,3 +22,16 @@ jobs:
 
 > [!IMPORTANT]
 > Only works with a push event
+
+## Example Output
+
+```
+✨ will-lynas/deploy-notifications-test
+🎉 Deploy Successful
+
+🥷 will-lynas
+💬 Dummy commit 1
+
+🥷 will-lynas
+💬 Dummy commit 2
+```

@@ -10,7 +10,7 @@ runs:
     - id: format_commits
       shell: bash
       run: |
-        commits=$(echo '${{ toJson(github.event.commits) }}' | python parse.py)
+        commits=$(echo '${{ toJson(github.event.commits) }}' | python ${{ github.action_path }}/parse.py)
         echo "$commits"
 
         echo 'commit_messages<<EOF' >> $GITHUB_OUTPUT
